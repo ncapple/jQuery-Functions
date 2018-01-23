@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery functions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.click').click(function(){
+            alert("you clicked me")
+        })
+        $('.hide').click(function(){
+            $('.hide').hide()
+        })
+        $('.show').click(function(){
+            $('.hide').show()
+        })
+        $('.toggle').click(function(){
+            $('.show').toggle()
+        })
+        $('.slided').click(function(){
+            $('.hidden').slideDown("slow")
+        })
+        $('.slideu').click(function(){
+            $('.hidden').slideUp("slow")
+        })
+        $('.slidet').click(function(){
+            $('.hiddenn').slideToggle()
+        })
+        $('.fadei').click(function(){
+            $('.fadei1').fadeIn()
+        })
+        $('.fade0').click(function(){
+            $('.fadei1').fadeOut()
+        })
+        $('.addc').click(function(){
+            $('#pink').addClass("pink")
+        })
+        $('.before').click(function(){
+            $('#before').before('<h1>Pokemon are cool</h1>')
+        })
+        $('.after').click(function(){
+            $('#after').after('<h1>Pokemon are cool</h1>')
+        })
+        $('.app').click(function(){
+            $('#app').append('this is new')
+        })
+        $('.html').click(function(){
+            $('#html').html("<h1>I'm new to this world</h1>")
+        })
+		$('.attr').click(function(){
+			var classVal = $("#attr").attr("class")
+			$('#attr').append(classVal)
+		})
+		$('.attr2').click(function(){
+			$("#attr").attr("class", "red")
+        })
+        $('.val').click(function(){
+			console.log($("#val").val())
+		})
+		$('.val2').click(function(){
+			$('#val').val("red")
+        })
+        $('.text').click(function(){
+            $('#text').text("I'm new to this world")
+        })
+		$.data(ele, "name", "minh")
+		$('.data').click(function(){
+			var value = $.data(ele,"name")
+			$("#data").after(value)
+		})
+
+
+    })
+
+</script>
+
+<style type="text/css">
+    .pink {
+        color: pink;
+    }
+</style>
+</head>
+<body>
+<fieldset>
+    <legend>Click</legend>
+    <p>Bind an event handler to the “click” JavaScript event, or trigger that event on an element.</p>
+    <button class="click">Click</button>
+</fieldset>
+
+<fieldset>
+    <legend>Hide</legend>
+    <p>Hide the matched elements.</p>
+    <button class="hide">Click to hide this button</button>
+</fieldset>
+
+<fieldset>
+    <legend>Show</legend>
+    <p>Display the matched elements.</p>
+    <button class="show">Click to show the hidden button</button>
+</fieldset>
+
+<fieldset>
+    <legend>Toggle</legend>
+    <p>Display or hide the matched elements.</p>
+    <button class="toggle">press me to show/hide the show button</button>
+</fieldset>
+
+<fieldset>
+    <legend>SlideDown</legend>
+    <p>Display the matched elements with a sliding motion.</p>
+    <img class="hidden" src="https://cdn.cnn.com/cnnnext/dam/assets/151104100359-cat-internet-super-tease.jpg" alt="" height="100px;" hidden><br>
+    <button class="slided">click me to slide</button>
+</fieldset>
+
+<fieldset>
+    <legend>SlideUp</legend>
+    <p>Hide the matched elements with a sliding motion.</p>
+    <button class="slideu">click me to slide up!</button>
+</fieldset>
+
+<fieldset>
+    <legend>SlideToggle</legend>
+    <p>Display or hide the matched elements with a sliding motion.</p>
+    <img class="hiddenn" src="https://cdn.cnn.com/cnnnext/dam/assets/151104100359-cat-internet-super-tease.jpg" alt="" height="100px;" hidden><br>
+    <button class="slidet">"Click here to slide toggle'</button>
+</fieldset>
+
+<fieldset>
+    <legend>fadeIn</legend>
+    <p>Display the matched elements by fading them to opaque.</p>
+    <img class="fadei1" src="https://cdn.cnn.com/cnnnext/dam/assets/151104100359-cat-internet-super-tease.jpg" alt="" height="100px;" hidden><br>
+    <button class="fadei">press to fade in</button>
+</fieldset>
+
+<fieldset>
+    <legend>FadeOut</legend>
+    <p>Hide the matched elements by fading them to transparent.</p>
+    <button class="fade0">press to fade out</button>
+</fieldset>
+
+<fieldset>
+    <legend>AddClass</legend>
+    <p>Adds the specified class(es) to each element in the set of matched elements.</p>
+    <p id="pink">I was black, but now im?</p>
+    <button class="addc">Press to add class</button>
+</fieldset>
+
+<fieldset>
+    <legend>Before</legend>
+    <p id="before">Insert content, specified by the parameter, before each element in the set of matched elements.</p>
+    <button class="before">click to add the tag before the p</button>
+</fieldset>
+
+<fieldset>
+    <legend>After</legend>
+    <p id="after">Insert content, specified by the parameter, after each element in the set of matched elements.</p>
+    <button class="after">Click to add the wild h1 after the p</button>
+</fieldset>
+
+<fieldset>
+    <legend>Append</legend>
+    <p id="app">Insert content, specified by the parameter, to the end of each element in the set of matched elements.</p>
+    <button class="app">Press to append</button>
+</fieldset>
+
+<fieldset>
+    <legend>HTML</legend>
+    <p>Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.</p>
+    <div id="html">im a new div. <p>im a ne p in that new div</p></div>
+    <button class="html">press to get some new stuff</button>
+</fieldset>
+
+<fieldset>
+    <legend>Attr</legend>
+    <p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p>
+    <p class="pink" id="attr">I am a p tag with the class of pink. Class=</p>
+    <button class="attr">Click to retreive the class</button>
+    <button class="attr2">click to change the class attribute to red</button>
+</fieldset>
+
+<fieldset>
+    <legend>Val</legend>
+    <p>Get the current value of the first element in the set of matched elements or set the value of every matched element.</p>
+    <input type="text" name="name" id="val" placeholder="look in the console">
+    <button class="val">click to retrieve value</button>
+    <button class="val2">click to change value</button>
+</fieldset>
+
+<fieldset>
+    <legend>Text</legend>
+    <p id="text">Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.</p>
+    <button class="text">press to text</button>
+</fieldset>
+
+<fieldset>
+    <legend>Data</legend>
+    <p>Store arbitrary data associated with the matched elements or return the value at the named data store for the first element in the set of matched elements.</p>
+    <p id="data"></p>
+    <button class="data">click to retrieve data</button>
+</fieldset>
+</body>
+
+</html>
